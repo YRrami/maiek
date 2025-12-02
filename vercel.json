@@ -1,0 +1,11 @@
+# Vercel Deployment Configuration
+
+[build]
+command = "npm run build"
+functions = "api/**/*.ts"
+
+[env]
+# Add environment variables here if needed
+
+[redirects]
+# Add redirects here if needed
