@@ -76,7 +76,7 @@ export default function MaieKPortfolio() {
       category: 'Brand Identity',
       size: 'medium',
       // PROJECT IMAGE 2
-      imageUrl: '/images/projects/branding.jpg',
+      imageUrl: '/images/projects/brandinng.jpg',
     },
     {
       id: 3,
