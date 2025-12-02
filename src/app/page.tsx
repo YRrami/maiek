@@ -85,7 +85,7 @@ export default function MaieKPortfolio() {
       category: 'Print Design',
       size: 'medium',
       // PROJECT IMAGE 3
-      imageUrl: '/images/projects/zaam.jpg',
+      imageUrl: '/images/projects/zaaam.jpg',
     },
     {
       id: 4,
