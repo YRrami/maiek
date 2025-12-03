@@ -312,88 +312,113 @@ export default function MaieKPortfolio() {
         </div>
       )}
 
-      {/* NAV */}
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
-        <div className="bg-white/60 backdrop-blur-xl border border-[#E0D4FF] rounded-full px-6 md:px-8 py-3 shadow-[0_18px_45px_rgba(158,128,255,0.35)]">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3 group cursor-pointer">
-              <div className="flex flex-col -space-y-1">
-                <span className="text-[1.7rem] leading-none font-black tracking-tight bg-[radial-gradient(circle_at_20%_20%,#FF617D,#FF9BB5)] bg-clip-text text-transparent">
-                  Maie k.
-                </span>
-                <span className="text-[0.6rem] tracking-[0.28em] uppercase text-[#9C8AF7]"></span>
-              </div>
-            </div>
-
-            <div className="hidden md:flex items-center gap-7 text-sm font-medium ">
-              <a
-                href="#work"
-                className="text-[#4A3B8E] hover:text-[#201332] transition-colors"
-              >
-                Work
-              </a>
-              <a
-                href="#services"
-                className="text-[#4A3B8E] hover:text-[#201332] transition-colors"
-              >
-                Services
-              </a>
-              <a
-                href="#about"
-                className="text-[#4A3B8E] hover:text-[#201332] transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-2 bg-[#FF617D] rounded-full text-sm font-semibold text-white hover:bg-[#ff8097] transition-all flex items-center gap-2 shadow-[0_12px_35px_rgba(255,97,125,0.65)]"
-              >
-                Say hi
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
-
-            <button
-              className="md:hidden "
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+{/* NAV */}
+<nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+  <div className="bg-white/60 backdrop-blur-xl border border-[#E0D4FF] rounded-full px-6 md:px-8 py-3 shadow-[0_18px_45px_rgba(158,128,255,0.35)]">
+    <div className="flex justify-between items-center">
+      {/* Brand logo – bigger but nav height stays the same */}
+      <a
+        href="#top"
+        className="flex items-center gap-3 group cursor-pointer"
+        aria-label="Maie K home"
+      >
+        <div className="h-8 md:h-9 flex items-center overflow-visible">
+          {/* LOGO IMAGE:
+              Put your logo at:
+              /public/images/brand/maie-logo.png
+              and update src if you use a different path/name. */}
+          <img
+            src="/images/brand/maiek.png"
+            alt="Maie K logo"
+            className="h-full w-auto object-contain origin-left scale-[4.9] md:scale-[5.2] transition-transform duration-200 group-hover:scale-[1.65]"
+          />
         </div>
+      </a>
 
-        {mobileMenuOpen && (
-          <div className="mt-4 bg-white/60 backdrop-blur-2xl border border-[#E0D4FF] rounded-3xl p-6 shadow-2xl shadow-[rgba(54,35,151,0.25)] animate-sectionFade ">
-            <div className="flex flex-col gap-4 text-base font-medium ">
-              <a
-                href="#work"
-                className="text-[#201332] hover:text-[#FF617D] transition-colors"
-              >
-                Work
-              </a>
-              <a
-                href="#services"
-                className="text-[#201332] hover:text-[#FF617D] transition-colors"
-              >
-                Services
-              </a>
-              <a
-                href="#about"
-                className="text-[#201332] hover:text-[#FF617D] transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className="text-[#201332] hover:text-[#FF617D] transition-colors"
-              >
-                Contact
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* Desktop nav links */}
+      <div className="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a
+          href="#work"
+          className="text-[#4A3B8E] hover:text-[#201332] transition-colors"
+        >
+          Work
+        </a>
+        <a
+          href="#services"
+          className="text-[#4A3B8E] hover:text-[#201332] transition-colors"
+        >
+          Services
+        </a>
+        <a
+          href="#about"
+          className="text-[#4A3B8E] hover:text-[#201332] transition-colors"
+        >
+          About
+        </a>
+        <a
+          href="#contact"
+          className="px-6 py-2 bg-[#FF617D] rounded-full text-sm font-semibold text-white hover:bg-[#ff8097] transition-all flex items-center gap-2 shadow-[0_12px_35px_rgba(255,97,125,0.65)]"
+        >
+          Say hi
+          <ArrowUpRight className="w-4 h-4" />
+        </a>
+      </div>
+
+      {/* Mobile menu toggle */}
+      <button
+        className="md:hidden"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Toggle navigation"
+      >
+        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
+  </div>
+
+  {/* Mobile nav panel */}
+  {mobileMenuOpen && (
+    <div className="mt-4 bg-white/60 backdrop-blur-2xl border border-[#E0D4FF] rounded-3xl p-6 shadow-2xl shadow-[rgba(54,35,151,0.25)] animate-sectionFade">
+      <div className="flex flex-col gap-4 text-base font-medium">
+        <a
+          href="#work"
+          className="text-[#201332] hover:text-[#FF617D] transition-colors"
+        >
+          Work
+        </a>
+        <a
+          href="#services"
+          className="text-[#201332] hover:text-[#FF617D] transition-colors"
+        >
+          Services
+        </a>
+        <a
+          href="#about"
+          className="text-[#201332] hover:text-[#FF617D] transition-colors"
+        >
+          About
+        </a>
+        <a
+          href="#contact"
+          className="text-[#201332] hover:text-[#FF617D] transition-colors"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+  )}
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
 
       {/* HERO – collage wall */}
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-36 pb-32 md:pb-36">
